@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NogueiraJr/nodejs_20201228#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "debug": "^4.3.1",
     "express": "^4.17.1",
     "http": "0.0.1-security"
