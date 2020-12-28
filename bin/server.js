@@ -1,26 +1,14 @@
 'use strict' //Força a screver código JS com mais qualidade
 
 //Importando os pacotes necessários para a Aplicação
+const app = require('../src/app');
 const http = require('http');
 const debug = require('debug')('nodestr:server');
-const express = require('express');
 
-const app = express();
 const port = normalizePort(process.env.PORT || '3000'); //process.env.PORT é do AZURE
 app.set('port', port);
 
 const server = http.createServer(app);
-const router = express.Router();
-
-//Criando as rotas
-const route = router.get('/', (req, res, next) => {
-    res.status(200).send({
-        title: 'Node Store API',
-        version: '0.0.2'
-    });
-});
-
-app.use('/', route);
 
 //Rodando a aplicação
 server.listen(port); //Ouvindo a Porta da Aplicação
