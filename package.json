@@ -1,0 +1,24 @@
+{
+  "name": "20201228",
+  "version": "1.0.0",
+  "description": "Projeto Lab NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NogueiraJr/nodejs_20201228.git"
+  },
+  "author": "Nogueira Jr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NogueiraJr/nodejs_20201228/issues"
+  },
+  "homepage": "https://github.com/NogueiraJr/nodejs_20201228#readme",
+  "dependencies": {
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "http": "0.0.1-security"
+  }
+}
