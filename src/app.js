@@ -17,11 +17,11 @@ const route = router.get('/', (req, res, next) => {
     });
 });
 
-const create = router.post('/', (req, res, next) => {
+const ins = router.post('/', (req, res, next) => {
     res.status(201).send(req.body);
 });
 
-const put = router.put('/:id', (req, res, next) => {
+const upd = router.put('/:id', (req, res, next) => {
     const id = req.params.id;
     res.status(200).send({
         id: id,
@@ -29,8 +29,13 @@ const put = router.put('/:id', (req, res, next) => {
     });
 });
 
+const del = router.delete('/', (req, res, next) => {
+    res.status(200).send(req.body);
+});
+
 app.use('/', route); //Rota atribuida ao App
-app.use('/products', create);
-app.use('/products', put);
+app.use('/products', ins);
+app.use('/products', upd);
+app.use('/products', del);
 
 module.exports = app;
