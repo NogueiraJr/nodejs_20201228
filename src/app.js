@@ -21,7 +21,16 @@ const create = router.post('/', (req, res, next) => {
     res.status(201).send(req.body);
 });
 
+const put = router.put('/:id', (req, res, next) => {
+    const id = req.params.id;
+    res.status(200).send({
+        id: id,
+        item: req.body
+    });
+});
+
 app.use('/', route); //Rota atribuida ao App
-app.use('/create', create);
+app.use('/products', create);
+app.use('/products', put);
 
 module.exports = app;
