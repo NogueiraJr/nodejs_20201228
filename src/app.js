@@ -10,6 +10,8 @@ const router = express.Router();
 //Conectar Banco de Dados
 mongoose.connect('mongodb://usrapi:UserApi123@192.168.15.7:27017');
 
+//Carregar os Modelos
+const Product = require('./models/product');
 
 //Carregando as rotas aqui
 const indexRoute = require('./routes/index-route');
