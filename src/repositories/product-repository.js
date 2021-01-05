@@ -33,3 +33,33 @@ exports.getByTag = (tag) => {
         }, 'title description slug price');
 
 }
+
+exports.create = (data) => {
+    var product = new Product(data);
+    //ou...
+    //var product = new Product();
+    //product.title = req.body.title;
+    //product.title = req.body.etc..
+
+    return product.save();
+
+}
+
+exports.put = (id, data) => {
+    return Product
+        .findByIdAndUpdate(id, {
+            $set: {
+                title: data.title,
+                description: data.description,
+                slug: data.slug,
+                price: data.price
+            }
+        });
+
+}
+
+exports.delete = (id) => {
+    return Product
+        //.findOneAndRemove(req.params.id)
+        .findOneAndRemove(id);
+}
