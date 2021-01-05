@@ -50,6 +50,23 @@ exports.getById = (req, res, next) => {
         ;
 }
 
+exports.getByTag = (req, res, next) => {
+    Product
+        .find({
+            active: true,
+            tags: req.params.tag
+        }, 'title description slug price')
+        .then(data => {
+            res.status(200).send(data);
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao consultar produtos',
+                data: e
+            });
+        })
+        ;
+}
+
 exports.post = (req, res, next) => {
 
     var product = new Product(req.body);
