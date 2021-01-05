@@ -7,7 +7,7 @@ exports.get = (req, res, next) => {
     // Product.find({_id: 'ID'});
     // Product.find({description: 'description...'});
     Product
-        .find({})
+        .find({ active: true }, 'title description slug price')
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
