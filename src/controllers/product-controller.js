@@ -3,6 +3,22 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 
+exports.get = (req, res, next) => {
+    // Product.find({_id: 'ID'});
+    // Product.find({description: 'description...'});
+    Product
+        .find({})
+        .then(data => {
+            res.status(200).send(data);
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao consultar produtos',
+                data: e
+            });
+        })
+        ;
+}
+
 exports.post = (req, res, next) => {
 
     var product = new Product(req.body);
