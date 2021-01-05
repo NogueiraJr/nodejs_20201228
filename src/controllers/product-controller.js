@@ -3,12 +3,11 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 const ValidationContract = require('../validators/validator');
+const repository = require('../repositories/product-repository');
 
 exports.get = (req, res, next) => {
-    // Product.find({_id: 'ID'});
-    // Product.find({description: 'description...'});
-    Product
-        .find({ active: true }, 'title description slug price')
+    repository
+        .get()
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
@@ -16,21 +15,17 @@ exports.get = (req, res, next) => {
                 message: 'Falha ao consultar produtos',
                 data: e
             });
-        })
-        ;
+        });
 }
 
 exports.getBySlug = (req, res, next) => {
-    Product
-        .findOne({
-            active: true,
-            slug: req.params.slug
-        }, 'title description slug price')
+    repository
+        .getBySlug(req.params.slug)
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
             res.status(400).send({
-                message: 'Falha ao consultar produtos',
+                message: 'Falha ao consultar produtos por Slug',
                 data: e
             });
         })
@@ -38,13 +33,13 @@ exports.getBySlug = (req, res, next) => {
 }
 
 exports.getById = (req, res, next) => {
-    Product
-        .findById(req.params.id)
+    repository
+        .getById(req.params.id)
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
             res.status(400).send({
-                message: 'Falha ao consultar produtos',
+                message: 'Falha ao consultar produto por Id',
                 data: e
             });
         })
@@ -52,11 +47,8 @@ exports.getById = (req, res, next) => {
 }
 
 exports.getByTag = (req, res, next) => {
-    Product
-        .find({
-            active: true,
-            tags: req.params.tag
-        }, 'title description slug price')
+    repository
+        .getByTag(req.params.tag)
         .then(data => {
             res.status(200).send(data);
         }).catch(e => {
