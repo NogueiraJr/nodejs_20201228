@@ -28,7 +28,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\":\"Produto 005\",\n    \"description\":\"Descrição 005\",\n    \"slug\":\"slug-005\",\n    \"price\":\"555\",\n    \"active\":true,\n    \"tags\":[\"A5\", \"B5\", \"C5\"]\n}",
+					"raw": "{\n    \"title\":\"Produto 001\",\n    \"description\":\"Descrição 001\",\n    \"slug\":\"slug-001\",\n    \"price\":\"111\",\n    \"active\":true,\n    \"tags\":[\"A1\", \"B1\", \"C1\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -56,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"Title\": \"Teste\"\n}",
+					"raw": "{\n    \"title\": \"Produto 001 ALT\",\n    \"description\": \"Descrição 001 ALT\",\n    \"slug\": \"slug-001-alt\",\n    \"price\": \"1112\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -64,7 +64,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/products/123",
+					"raw": "http://localhost:3000/products/5ff4db69a5da27a726139965",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -72,7 +72,7 @@
 					"port": "3000",
 					"path": [
 						"products",
-						"123"
+						"5ff4db69a5da27a726139965"
 					]
 				}
 			},
@@ -85,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"Title\" : \"Teste DEL\"\n}",
+					"raw": "{\n    \"id\" : \"5ff4dbbaa5da27a726139968\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -93,14 +93,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/products",
+					"raw": "http://localhost:3000/products/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"products"
+						"products",
+						""
 					]
 				}
 			},
@@ -161,6 +162,27 @@
 						"products",
 						"product",
 						"5ff451663b6178986f9981da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/products/tags/ GET BY TAGS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/tags/A1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"tags",
+						"A1"
 					]
 				}
 			},
