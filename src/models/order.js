@@ -24,7 +24,7 @@ const schema = new Schema({
         enum: ['created', 'done'],
         default: 'created'
     },
-    itens: [{
+    items: [{
         product: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'
@@ -40,7 +40,7 @@ const schema = new Schema({
         },
     }],
     //Se desejar que os itens fiquem em uma coleção externa a esta.
-    //itens: [{
+    //items: [{
     //    type: mongoose.Schema.Types.ObjectId,
     //    ref: 'Itens'
     //}], etc....
