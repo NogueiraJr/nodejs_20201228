@@ -6,59 +6,41 @@ const ValidationContract = require('../validators/validator');
 const repository = require('../repositories/product-repository');
 const { request } = require('express');
 
-exports.get = (req, res, next) => {
-    repository
-        .get()
-        .then(data => {
-            res.status(200).send(data);
-        }).catch(e => {
-            res.status(400).send({
-                message: 'Falha ao consultar produtos',
-                data: e
-            });
-        });
+exports.get = async (req, res, next) => {
+    try {
+        var data = await repository.get();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send(e);
+    }
 }
 
-exports.getBySlug = (req, res, next) => {
-    repository
-        .getBySlug(req.params.slug)
-        .then(data => {
-            res.status(200).send(data);
-        }).catch(e => {
-            res.status(400).send({
-                message: 'Falha ao consultar produtos por Slug',
-                data: e
-            });
-        })
-        ;
+exports.getBySlug = async (req, res, next) => {
+    try {
+        var data = await repository.getBySlug(req.params.slug)
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(400).send(e);
+    }
 }
 
-exports.getById = (req, res, next) => {
-    repository
-        .getById(req.params.id)
-        .then(data => {
-            res.status(200).send(data);
-        }).catch(e => {
-            res.status(400).send({
-                message: 'Falha ao consultar produto por Id',
-                data: e
-            });
-        })
-        ;
+exports.getById = async (req, res, next) => {
+    try {
+        var data = await repository.getById(req.params.id)
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(400).send(e);
+    }
 }
 
-exports.getByTag = (req, res, next) => {
-    repository
-        .getByTag(req.params.tag)
-        .then(data => {
-            res.status(200).send(data);
-        }).catch(e => {
-            res.status(400).send({
-                message: 'Falha ao consultar produtos',
-                data: e
-            });
-        })
-        ;
+exports.getByTag = async (req, res, next) => {
+    try {
+        var data = await repository.getByTag(req.params.tag);
+        res.status(200).send(data);
+
+    } catch (e) {
+        res.status(400).send(e);
+    }
 }
 
 exports.post = (req, res, next) => {
@@ -84,7 +66,7 @@ exports.post = (req, res, next) => {
                 data: e
             });
         });
-};
+}
 
 exports.put = (req, res, next) => {
     repository
@@ -97,7 +79,7 @@ exports.put = (req, res, next) => {
                 data: e
             });
         });
-};
+}
 
 exports.delete = (req, res, next) => {
     repository
@@ -110,4 +92,5 @@ exports.delete = (req, res, next) => {
                 data: e
             });
         });
-};
+}
+
