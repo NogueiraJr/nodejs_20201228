@@ -12,6 +12,7 @@ mongoose.connect('mongodb://usrapi:UserApi123@192.168.15.7:27017');
 
 //Carregar os Modelos
 const Product = require('./models/product');
+const Customer = require('./models/customer');
 
 //Carregando as rotas aqui
 const indexRoute = require('./routes/index-route');
