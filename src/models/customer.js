@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     // o MonboDb com o Mongoose cria um _id automaticamente aqui como chave geral
-    title: {
+    name: {
         type: String,
         required: true,
     },
