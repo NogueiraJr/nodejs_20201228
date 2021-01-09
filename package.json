@@ -23,7 +23,8 @@
     "guid": "0.0.12",
     "http": "0.0.1-security",
     "md5": "^2.3.0",
-    "mongoose": "^5.11.9"
+    "mongoose": "^5.11.9",
+    "sendgrid": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
