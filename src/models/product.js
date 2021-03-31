@@ -12,7 +12,7 @@ const schema = new Schema({
     },
     slug: { // compor o nome do produto para uma URL (único), ex.: pao de queijo => pao-de-queijo
         type: String,
-        required: [true, 'O Slug é obrigatório'],
+        required: [true, 'O Slug é obrigatório neste contexto!'],
         trim: true,
         index: true,
         unique: true

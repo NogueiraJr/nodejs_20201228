@@ -45,6 +45,7 @@ const schema = new Schema({
     //    ref: 'Itens'
     //}], etc....
     //
+    //aqui não vai mais nada.
 });
 
 module.exports = mongoose.model('Order', schema);
