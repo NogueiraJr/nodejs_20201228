@@ -6,15 +6,6 @@ const md5 = require('md5');
 
 const emailService = require('../services/email-service');
 
-exports.get = async (req, res, next) => {
-    try {
-        var data = await repository.get();
-        res.status(200).send(data);
-    } catch (e) {
-        res.status(500).send(e);
-    }
-}
-
 exports.post = async (req, res, next) => {
 
     let contract = new ValidationContract();
@@ -43,5 +34,14 @@ exports.post = async (req, res, next) => {
         res.status(201).send({ message: 'Cliente cadastrado com sucesso' });
     } catch (e) {
         res.status(400).send(e);
+    }
+}
+
+exports.get = async (req, res, next) => {
+    try {
+        var data = await repository.get();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send(e);
     }
 }

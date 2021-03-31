@@ -4,21 +4,21 @@ const ValidationContract = require('../validators/validator');
 const repository = require('../repositories/product-repository');
 const { request } = require('express');
 
-exports.get = async (req, res, next) => {
-    try {
-        var data = await repository.get();
-        res.status(200).send(data);
-    } catch (e) {
-        res.status(500).send(e);
-    }
-}
-
 exports.getBySlug = async (req, res, next) => {
     try {
         var data = await repository.getBySlug(req.params.slug)
         res.status(200).send(data);
     } catch (e) {
         res.status(400).send(e);
+    }
+}
+
+exports.get = async (req, res, next) => {
+    try {
+        var data = await repository.get();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send(e);
     }
 }
 
@@ -61,15 +61,6 @@ exports.post = async (req, res, next) => {
     }
 }
 
-exports.put = async (req, res, next) => {
-    try {
-        await repository.put(req.params.id, req.body)
-        res.status(200).send({ message: 'Produto atualizado com sucesso' });
-    } catch (e) {
-        res.status(400).send(e);
-    }
-}
-
 exports.delete = async (req, res, next) => {
     try {
         await repository.delete(req.body.id)
@@ -79,3 +70,11 @@ exports.delete = async (req, res, next) => {
     }
 }
 
+exports.put = async (req, res, next) => {
+    try {
+        await repository.put(req.params.id, req.body)
+        res.status(200).send({ message: 'Produto atualizado com sucesso' });
+    } catch (e) {
+        res.status(400).send(e);
+    }
+}
