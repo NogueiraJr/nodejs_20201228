@@ -31,7 +31,7 @@ exports.post = async (req, res, next) => {
             'Bem vindo ao Node Sample API',
             global.EMAIL_TMPL.replace('{0}', req.body.name));
 
-        res.status(201).send({ message: 'Cliente cadastrado com sucesso' });
+        res.status(201).send({ message: 'Cliente cadastrado com sucesso!' });
     } catch (e) {
         res.status(400).send(e);
     }
