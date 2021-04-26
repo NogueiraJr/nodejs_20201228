@@ -12,7 +12,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"API está respondendo!\", function () {",
+							"pm.test(\"API está ativa!\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							""
@@ -77,7 +77,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\":\"Produto {{key}}\",\n    \"description\":\"Descrição do Produto {{key}}\",\n    \"slug\":\"slug-{{key}}\",\n    \"price\":\"123\",\n    \"active\":true,\n    \"tags\":[\"A\", \"B\", \"C\", \"D\"]\n}",
+					"raw": "{\n    \"title\":\"Nome do Produto {{key}}\",\n    \"description\":\"Descrição do Produto ALT3{{key}}\",\n    \"slug\":\"slug-{{key}}\",\n    \"price\":\"123\",\n    \"active\":true,\n    \"tags\":[\"A\", \"B\", \"C\", \"D\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
