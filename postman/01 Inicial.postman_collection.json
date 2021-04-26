@@ -36,7 +36,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\":\"Produto\",\n    \"description\":\"Descrição do Produto\",\n    \"slug\":\"slug-3\",\n    \"price\":\"123\",\n    \"active\":true,\n    \"tags\":[\"A\", \"B\", \"C\", \"D\"]\n}",
+							"raw": "{\n    \"title\":\"Nome do Produto\",\n    \"description\":\"Descrição Resumida do Produto\",\n    \"slug\":\"slug-3\",\n    \"price\":\"123\",\n    \"active\":true,\n    \"tags\":[\"A\", \"B\", \"C\", \"D\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -64,7 +64,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Produto 001 ALT\",\n    \"description\": \"Descrição 001 ALT\",\n    \"slug\": \"slug-001-alt\",\n    \"price\": \"1112\"\n}",
+							"raw": "{\n    \"title\": \"Produto 001 ALT2\",\n    \"description\": \"Descrição Resumida 001 ALT2\",\n    \"slug\": \"slug-001-alt\",\n    \"price\": \"1112\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
