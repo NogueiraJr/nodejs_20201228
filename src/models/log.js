@@ -1,12 +1,12 @@
 'use strict'
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema, model } from 'mongoose';
+const Schema = _Schema;
 
 const schema = new Schema({
     // o MonboDb com o Mongoose cria um _id automaticamente aqui como chave geral
     customer: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: _Schema.Types.ObjectId,
         ref: 'Log'
     },
     number: {
@@ -26,11 +26,11 @@ const schema = new Schema({
     },
     items: [{
         old: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: _Schema.Types.ObjectId,
             ref: 'Old'
         },
         new: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: _Schema.Types.ObjectId,
             ref: 'New'
         },
         ref: {
@@ -41,5 +41,5 @@ const schema = new Schema({
     }],
 });
 
-module.exports = mongoose.model('Log', schema);
+export default model('Log', schema);
 //
