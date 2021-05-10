@@ -15,6 +15,16 @@ const schema = new Schema({
         type: String,
         required: true,
     },
+    //Usuário que realizou a ação que gerou o LOG.
+    user: {
+        type: String,
+        required: true
+    },
+    //Sistema gerador do LOG.
+    system: {
+        type: String,
+        required: true
+    },
     //Data da gravação do LOG
     createDate: {
         type: Date,
