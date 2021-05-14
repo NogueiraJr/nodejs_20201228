@@ -25,7 +25,7 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    //Celuar do Cliente
+    //Celular do Cliente
     celular: {
         type: String,
         required: true
