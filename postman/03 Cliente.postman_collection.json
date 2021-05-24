@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "1f09a273-805d-4d1c-850c-13a3f13a624c",
+		"name": "nodejs_20201228 (mongodb)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://3000-coral-chinchilla-eyi3vg6y.ws-us04.gitpod.io/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://3000-coral-chinchilla-eyi3vg6y.ws-us04.gitpod.io/",
+					"protocol": "https",
+					"host": [
+						"3000-coral-chinchilla-eyi3vg6y",
+						"ws-us04",
+						"gitpod",
+						"io"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://3000-coral-chinchilla-eyi3vg6y.ws-us04.gitpod.io/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Título do Produto 01\",\n    \"description\": \"Descrição do Produto 01\",\n    \"slug\": \"slug01\",\n    \"price\": \"123\",\n    \"active\": true,\n    \"tags\": [\"A\", \"B\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3000-coral-chinchilla-eyi3vg6y.ws-us04.gitpod.io/products",
+					"protocol": "https",
+					"host": [
+						"3000-coral-chinchilla-eyi3vg6y",
+						"ws-us04",
+						"gitpod",
+						"io"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://3000-coral-chinchilla-eyi3vg6y.ws-us04.gitpod.io/cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Cliente 01\",\n    \"nome\": \"Nome do Cliente 01\",\n    \"price\": \"123\",\n    \"celular\": \"55011986555654\",\n    \"email\": \"cliente@email.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3000-coral-chinchilla-eyi3vg6y.ws-us04.gitpod.io/products",
+					"protocol": "https",
+					"host": [
+						"3000-coral-chinchilla-eyi3vg6y",
+						"ws-us04",
+						"gitpod",
+						"io"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
